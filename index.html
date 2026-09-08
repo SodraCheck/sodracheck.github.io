@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Аудит пенсионного стажа Sodra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<style>
+body{
+font-family:Inter,system-ui;
+margin:0;
+background:#f4f6f8;
+color:#1e293b;
+line-height:1.6;
+}
+
+.container{
+max-width:1050px;
+margin:auto;
+padding:0 20px;
+}
+
+header{
+background:white;
+border-bottom:1px solid #e2e8f0;
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 0;
+}
+
+.logo{
+font-weight:600;
+font-size:18px;
+}
+
+nav a{
+margin-left:18px;
+text-decoration:none;
+font-size:14px;
+color:#475569;
+}
+
+.hero{
+padding:60px 0;
+background:white;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.hero-title{
+font-size:36px;
+margin-bottom:14px;
+}
+
+.hero-text{
+color:#475569;
+max-width:500px;
+margin-bottom:25px;
+}
+
+.btn{
+padding:12px 20px;
+border-radius:6px;
+border:none;
+cursor:pointer;
+font-weight:500;
+}
+
+.btn-primary{
+background:#1e3a8a;
+color:white;
+}
+
+.btn-outline{
+border:1px solid #cbd5e1;
+background:white;
+}
+
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+border:1px solid #e2e8f0;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+section{
+padding:45px 0;
+}
+
+.section-title{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.example{
+background:#f8fafc;
+border-left:4px solid #1e3a8a;
+padding:20px;
+margin-top:20px;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.tariff{
+background:white;
+border:1px solid #e2e8f0;
+border-radius:10px;
+padding:22px;
+}
+
+.tariff-price{
+font-size:22px;
+font-weight:600;
+margin:10px 0;
+}
+
+.leadmagnet{
+background:#eef2ff;
+padding:25px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+align-items:center;
+}
+
+.guide{
+background:#fff;
+border:1px solid #e2e8f0;
+border-radius:10px;
+padding:25px;
+margin-bottom:40px;
+}
+
+form input, form textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border:1px solid #cbd5e1;
+border-radius:6px;
+}
+
+footer{
+border-top:1px solid #e2e8f0;
+padding:20px;
+text-align:center;
+font-size:13px;
+color:#64748b;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+
+.hero-grid,
+.cards,
+.pricing{
+grid-template-columns:1fr;
+}
+}
+
+#toTop{
+position:fixed;
+right:20px;
+bottom:20px;
+width:44px;
+height:44px;
+border:none;
+border-radius:50%;
+background:#1e3a8a;
+color:white;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+z-index:999;
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo">Аудит пенсии Sodra</div>
+    <nav>
+      <a href="#example">Пример</a>
+      <a href="#guide">Инструкция</a>
+      <a href="#audit">Аудит</a>
+    </nav>
+    <div style="margin-left:20px; font-weight:500;">
+      <a href="indexEN.html" style="text-decoration:none;color:#475569;">EN</a> / <span style="color:#1e3a8a;">RU</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<h1 class="hero-title">
+Проверка пенсионного стажа в Литве
+</h1>
+<p class="hero-text">
+Если вы работали в Литве официально — у вас <b>уже</b> может быть пенсионный стаж.  
+Даже после отъезда из страны эти годы могут давать <b>право на выплаты</b>.
+</p>
+<button class="btn btn-primary" onclick="document.getElementById('audit').scrollIntoView({behavior:'smooth'})">
+Проверить стаж
+</button>
+</div>
+<div class="card">
+<b>Что можно узнать</b>
+<ul>
+<li>есть ли пенсионный стаж</li>
+<li>сколько лет уже накоплено</li>
+<li>какие взносы платились</li>
+<li>какие документы сохранить</li>
+<li>как получить пенсию позже</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="example">
+<div class="container">
+<h2 class="section-title">
+Реальный пример
+</h2>
+<div class="example">
+<b>Ситуация</b><br><br>
+Человек работал в Литве 6 лет по трудовому договору и затем уехал из страны.
+<br><br>
+<b>Что оказалось после проверки</b>
+<ul>
+<li>6 лет страхового стажа</li>
+<li>все взносы сохранены в системе</li>
+<li>при достижении пенсионного возраста возможна частичная пенсия</li>
+</ul>
+<br>
+Главное — сохранить документы из системы заранее.
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">
+Проверьте за 12 секунд
+</h2>
+<div class="card">
+<p>
+Ответьте на несколько вопросов.
+</p>
+<ul>
+<li>Вы работали в Литве официально?</li>
+<li>Работодатель платил налоги и социальные взносы?</li>
+<li>У вас был трудовой договор?</li>
+<li>Вы работали больше 1 года?</li>
+</ul>
+<p style="margin-top:15px">
+Если вы ответили <b>«Да» хотя бы один раз</b> —  
+вероятно у вас уже есть пенсионный стаж в системе.
+</p>
+<button class="btn btn-primary"
+onclick="document.getElementById('audit').scrollIntoView({behavior:'smooth'})">
+Проверить мой стаж
+</button>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div style="
+background:#eef2ff;
+border:1px solid #c7d2fe;
+padding:30px;
+border-radius:10px;
+">
+<h2 style="margin-top:0">
+Большинство иностранцев даже не знают, что у них уже есть пенсионный стаж
+</h2>
+<div style="
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:20px;
+">
+<div class="card">
+<b style="font-size:28px">1–3 года</b>
+<br>
+часто имеют люди, которые работали в Литве совсем недолго
+</div>
+<div class="card">
+<b style="font-size:28px">5–10 лет</b>
+<br>
+типичный стаж у тех, кто жил и работал несколько лет
+</div>
+<div class="card">
+<b style="font-size:28px">20+ лет</b>
+<br>
+дают уже полноценную часть европейской пенсии
+</div>
+</div>
+<p style="margin-top:20px;color:#475569">Даже если вы уедете из Литвы — стаж сохраняется.</p>
+<p>Главное — правильно сохранить данные из системы Sodra.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">
+Калькулятор пенсии
+</h2>
+<p style="color:#475569">
+Расчёт ориентировочный и учитывает среднюю ежегодную индексацию пенсий.
+</p>
+<div class="card">
+<label>Пол</label>
+<select id="gender">
+<option value="male">Мужчина</option>
+<option value="female">Женщина</option>
+</select> <br>
+<label>Годы стажа</label>
+<input type="number" id="years" value="5"> <br>
+<label>Возраст</label>
+<input type="number" id="age" value="40"> <br>
+<label>Средняя зарплата брутто (€/мес)</label>
+<input type="number" id="salary" value="1800"> <br>
+<!-- <label>Годовая индексация (%)</label> -->
+<input type="hidden" id="index" value="4"> <br>
+<button class="btn btn-primary" onclick="calculatePension()">
+Рассчитать
+</button>
+<div id="result" style="margin-top:20px;font-weight:500"></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="leadmagnet">
+<div>
+<h3>Бесплатная инструкция</h3>
+<p>PDF: «Как сохранить пенсионный стаж перед отъездом из Литвы»</p>
+<p>Прочтение инструкции занимает минут пять и простая самостоятельная проверка занимает не более пяти минут.</p>
+<p>Итог: за 10 минут вы можете смостоятельно узнать свои данные и сохранить необходимые документы.</p>
+</div>
+<a class="btn btn-primary" href="/RU.pdf" download="RU.pdf">Скачать PDF</a>
+</div>
+</div>
+</section>
+
+<section id="guide">
+<div class="container">
+<div class="guide">
+<h2>Полное руководство</h2>
+<p>Подробное руководство как проверить стаж в системе Sodra и сохранить все документы.</p>
+<p>Простой язык, доступное изложение, много картинок, так что разберётся даже школьник!</p>
+<div class="tariff-price">10€</div>
+<ul>
+<li>Пошаговая инструкция</li>
+<li>Где скачать REP документы</li>
+<li>Что сохранить перед отъездом</li>
+<li>Как получить пенсию позже</li>
+</ul>
+<div style="margin-top:20px;">
+<a class="btn btn-primary gumroad-button"
+href="https://departman.gumroad.com/l/hytrh"
+target="_blank"
+style="font-size:16px; padding:14px 28px; display:inline-block;">
+Купить инструкцию
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div style="
+background:#fff7ed;
+border-left:5px solid #ea580c;
+padding:25px;
+border-radius:6px;
+">
+<h2>
+Перед отъездом из Литвы люди часто совершают одну ошибку
+</h2>
+<p>Многие иностранцы просто уезжают и не сохраняют данные из системы Sodra.</p>
+<p>Через 10–20 лет доказать свой стаж становится намного сложнее.</p>
+<p>Иногда люди узнают, что у них было <b>5–10 лет стажа</b>, но документы уже потеряны.</p>
+<p><b>Поэтому лучше проверить и сохранить всё заранее.</b></p>
+<button class="btn btn-primary"
+onclick="document.getElementById('audit').scrollIntoView({behavior:'smooth'})">
+Сохранить мой стаж
+</button>
+</div>
+</div>
+</section>
+
+<section id="audit">
+<div class="container">
+<h2 class="section-title">
+Варианты аудита
+</h2>
+<div class="pricing">
+<div class="tariff">
+<h3>Проверка</h3>
+<div class="tariff-price">40€</div>
+<ul>
+<li>проверка стажа</li>
+<li>объяснение системы</li>
+<li>ответы на вопросы</li>
+</ul>
+</div>
+<div class="tariff">
+<h3>Полный аудит</h3>
+<div class="tariff-price">80€</div>
+<ul>
+<li>проверка стажа</li>
+<li>сохранение документов</li>
+<li>инструкция по выплатам</li>
+</ul>
+</div>
+<div class="tariff">
+<h3>Подготовка перед отъездом</h3>
+<div class="tariff-price">120€</div>
+<ul>
+<li>полный аудит</li>
+<li>сбор всех документов</li>
+<li>инструкция на будущее</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">Заявка</h2>
+<form action="https://formsubmit.co/info@sodracheck.info" method="POST">
+<input type="text" name="name" placeholder="Имя" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Коротко о вашей ситуации"></textarea>
+<button class="btn btn-primary">
+Отправить заявку
+</button>
+</form>
+<p>Или опишите вашу ситуацию в письме на адрес: <a href="mailto:info@sodracheck.info">info@sodracheck.info</a></p>
+<br>
+<p>Было полезно? Я очень люблю кофе!</p>
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="departman" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+</div>
+</section>
+
+<footer>
+© 2026 Проверка пенсионного стажа Sodra
+</footer>
+
+<script>
+function calculatePension(){
+let years = parseFloat(document.getElementById("years").value);
+let age = parseFloat(document.getElementById("age").value);
+let salary = parseFloat(document.getElementById("salary").value);
+let index = parseFloat(document.getElementById("index").value)/100;
+let gender = document.getElementById("gender").value;
+let pensionAge = 65;
+let yearsLeft = pensionAge - age;
+if(yearsLeft < 0){
+yearsLeft = 0;
+}
+let baseCoefficient = salary / 1000;
+let currentPension = years * 8 * baseCoefficient;
+let futurePension = currentPension * Math.pow((1+index), yearsLeft);
+document.getElementById("result").innerHTML =
+"Примерная пенсия сейчас: <b>" +
+Math.round(currentPension) +
+" €</b><br><br>Оценка на момент выхода на пенсию: <b>" +
+Math.round(futurePension) +
+" €</b>" +
+"<div style='margin-top:20px;padding:15px;background:#f1f5f9;border-radius:6px'>" +
+"<b>Важно:</b> этот расчёт приблизительный. Точная сумма зависит от страхового стажа и данных в системе Sodra.<br><br>" +
+"<button onclick=\"document.getElementById('audit').scrollIntoView({behavior:'smooth'})\" class='btn btn-primary'>" +
+"Проверить мой стаж в Sodra"
++"</button></div>";
+}
+</script>
+
+<button id="toTop">↑</button>
+
+<script>
+const btn = document.getElementById("toTop");
+btn.onclick = function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+};
+</script>
+
+</body>
+</html>
